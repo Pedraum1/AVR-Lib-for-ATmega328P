@@ -3,6 +3,9 @@
 
 #include <avr/io.h>
 
+// ================ Booleano ================
+#include "Boolean/Boolean.h"
+
 // ================ Manipulação de Bits ================
 #include "Bits/Bits.h"
 
