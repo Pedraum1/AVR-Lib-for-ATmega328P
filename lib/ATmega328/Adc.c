@@ -1,5 +1,7 @@
 #include "Adc.h"
 
+volatile uint8_t adc_conversion_complete = 0;
+
 ISR(ADC_vect)
 {
 	adc_conversion_complete = 1;

@@ -5,7 +5,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-volatile uint8_t adc_conversion_complete = 0;
+extern volatile uint8_t adc_conversion_complete;
 
 void adc_init();
 uint16_t read_analog(uint8_t portc_pin);
