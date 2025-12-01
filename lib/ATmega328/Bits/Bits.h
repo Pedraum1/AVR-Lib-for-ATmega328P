@@ -28,4 +28,13 @@
     inp_bit(DDRD, PD4); -> false
 */
 
+#define toggle_bit(reg, bit) (reg ^=  (1 << bit))
+/*  Inverte o estado de um bit em específico de um registrador
+
+    Exemplo:
+    DDRD = 0b10111001
+    toggle_bit(DDRD, PD0);
+    DDRD = 0b10111000
+*/
+
 #endif

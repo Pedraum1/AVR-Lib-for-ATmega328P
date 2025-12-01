@@ -13,6 +13,7 @@
 #include "../Timers/Timers.h"
 
 // ================ Conversão AD ================
+#include "../Adc/Adc.h"
 
 // ================ Display LCD ================
 
