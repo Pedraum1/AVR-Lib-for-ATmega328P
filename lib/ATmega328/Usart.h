@@ -9,6 +9,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
+#include "Boolean.h"
 
 #define SIZE_BUFF 64
 
@@ -20,5 +21,7 @@ void usart_print_number(int num);
 uint16_t usart_count();
 char usart_read();
 void usart_read_string(char *buff);
+uint8_t usart_available();
+uint8_t string_compare(const char *str1, const char *str2);
 
 #endif

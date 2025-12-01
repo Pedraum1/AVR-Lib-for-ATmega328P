@@ -108,17 +108,12 @@ void usart_read_string(char *buff)
 {
 	uint16_t i = 0;
 
-	// Blocking read: wait until we receive a terminator (CR or LF)
-	// and collect all bytes that come before it. This prevents
-	// partial reads when the incoming line arrives in multiple chunks.
 	while (1)
 	{
-		// wait for at least one byte
 		while (usart_count() == 0) ;
 
 		char c = usart_read();
 
-		// treat CR or LF as end of line
 		if (c == '\n' || c == '\r')
 		{
 			break;
@@ -131,6 +126,25 @@ void usart_read_string(char *buff)
 		}
 	}
 
-	// Null-terminate the string (may be empty)
 	buff[i] = '\0';
+}
+
+uint8_t usart_available()
+{
+	return usart_count() > 0;
+}
+
+uint8_t string_compare(const char *str1, const char *str2)
+{
+	while (*str1 && *str2)
+	{
+		if (*str1 != *str2)
+		{
+			return false;
+		}
+		str1++;
+		str2++;
+	}
+
+	return (*str1 == '\0' && *str2 == '\0') ? true : false;
 }
