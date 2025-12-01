@@ -4,16 +4,16 @@
 #include <avr/io.h>
 
 // ================ Booleano ================
-#include "../Boolean/Boolean.h"
+#include "Boolean.h"
 
 // ================ Manipulação de Bits ================
-#include "../Bits/Bits.h"
+#include "Bits.h"
 
 // ================ Configuração de Timers ================
-#include "../Timers/Timers.h"
+#include "Timers.h"
 
 // ================ Conversão AD ================
-#include "../Adc/Adc.h"
+#include "Adc.h"
 
 // ================ Display LCD ================
 
