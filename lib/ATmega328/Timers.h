@@ -4,21 +4,27 @@
 
 #include "avr/interrupt.h"
 
+// ================ Modo de operação ================
 #define NORMAL      0
 #define PWM_PHASE   1
 #define CTC         2
 #define FAST_PWM    3
 
+// ================ Prescaler ================
 #define PS1     1
 #define PS8     2
 #define PS64    3
 #define PS256   4
 #define PS1024  5
 
+// ================ Modos de comparação ================
+
 #define NORMAL  0
 #define TOGGLE  1
 #define CLEAR   2
 #define SET     3
+
+// ================ Configurações do timer0 ================
 
 void timer0_set_operation_mode(uint8_t mode);
 void timer0_set_prescaler(uint8_t prescaler);
@@ -30,5 +36,9 @@ void timer0_set_ocr0a(uint8_t duty_cicle_8bit);
 void timer0_set_ocr0b(uint8_t duty_cicle_8bit);
 
 void timer0_enable_interrupts();
+
+// ================ Configurações do timer1 ================
+
+// ================ Configurações do timer2 ================
 
 #endif

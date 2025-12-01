@@ -4,6 +4,8 @@ volatile uint8_t usart_run = 1;
 volatile char rx_buffer[SIZE_BUFF] = {0x00};
 volatile uint16_t rx_buff = 0;
 
+// ================ Interrupções da USART ================
+
 ISR(USART_TX_vect)
 {
 	usart_run = 1;
@@ -20,6 +22,7 @@ ISR(USART_RX_vect)
 	if(cnt_buff >= SIZE_BUFF)	cnt_buff = 0;
 }
 
+// Configura registradores da USART e habilita interrupções
 void usart_init(uint16_t baud_rate, uint8_t fast_mode)
 {
 	if(fast_mode)
@@ -40,6 +43,7 @@ void usart_init(uint16_t baud_rate, uint8_t fast_mode)
 	sei();
 }
 
+// Escreve um caractére no barramento Serial
 void usart_write(char message_byte)
 {
 	while(!usart_run);
@@ -49,17 +53,20 @@ void usart_write(char message_byte)
 	UDR0 = message_byte;
 }
 
+// Escreve um conjunto de caractéres no barramento Serial
 void usart_print(char *message)
 {
 	for(int i = 0; message[i] != '\0' ; i++) usart_write(message[i]);
 }
 
+// Escreve um conjunto de caractéres com quebra de linha no barramento Serial
 void usart_println(char *message)
 {
     for(int i = 0; message[i] != '\0' ; i++) usart_write(message[i]);
 	usart_write('\n');
 }
 
+// Escreve um número como caractéres no barramento Serial
 void usart_print_number(int num)
 {
 	char buffer[10];
@@ -86,11 +93,13 @@ void usart_print_number(int num)
 	}
 }
 
+// Retorna o contador do buffer de recepção
 uint16_t usart_count()
 {
 	return rx_buff;
 }
 
+// Lê um caractére do barramento Serial
 char usart_read()
 {
 	static uint16_t buffer_local = 0;
@@ -104,6 +113,7 @@ char usart_read()
 	return byte_rx;
 }
 
+// Lê um conjunto de caractéres do barramento Serial até o caractére de quebra de linha
 void usart_read_string(char *buff)
 {
 	uint16_t i = 0;
@@ -129,11 +139,13 @@ void usart_read_string(char *buff)
 	buff[i] = '\0';
 }
 
+// Retorna se há conteúdo no barramento Serial
 uint8_t usart_available()
 {
 	return usart_count() > 0;
 }
 
+// Faz a comparação entre duas strings (conjunto de caractéres) se são iguais
 uint8_t string_compare(const char *str1, const char *str2)
 {
 	while (*str1 && *str2)

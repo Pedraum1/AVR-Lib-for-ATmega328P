@@ -1,5 +1,7 @@
 #include "Timers.h"
 
+// ================ TIMER0 ================
+
 void timer0_set_prescaler(uint8_t prescaler)
 {
     TCCR0B &= ~(0b00000111);
@@ -48,3 +50,7 @@ void timer0_enable_interrupts()
     TIMSK0 = 0b00000001;
     sei();
 }
+
+// ================ TIMER1 ================
+
+// ================ TIMER2 ================
