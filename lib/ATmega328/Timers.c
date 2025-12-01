@@ -42,3 +42,9 @@ void timer0_set_ocr0b(uint8_t duty_cicle_8bit)
 {
     OCR0B = duty_cicle_8bit;
 }
+
+void timer0_enable_interrupts()
+{
+    TIMSK0 = 0b00000001;
+    sei();
+}

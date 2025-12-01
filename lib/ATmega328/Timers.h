@@ -29,4 +29,6 @@ void timer0_config_oc0b(uint8_t output_mode);
 void timer0_set_ocr0a(uint8_t duty_cicle_8bit);
 void timer0_set_ocr0b(uint8_t duty_cicle_8bit);
 
+void timer0_enable_interrupts();
+
 #endif
