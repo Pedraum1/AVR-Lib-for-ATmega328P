@@ -2,6 +2,8 @@
 #define ATMEGA328_H
 
 #include <avr/io.h>
+#include <avr/interrupt.h>
+#include <util/delay.h>
 
 // ================ Booleano ================
 #include "Boolean.h"
