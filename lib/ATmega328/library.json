@@ -1,0 +1,22 @@
+{
+  "name": "ATmega328 AVR Lib",
+  "version": "0.5.0",
+  "description": "A library for ATmega328P microcontroller providing bit-to-bit manipulation and full control over hardware periferals like Timers, ADC, USART and more",
+  "keywords": ["atmega", "timer", "display", "avr", "adc", "usart", "gpio", "microcontroller"],
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/Pedraum1/AVR-Lib-for-ATmega328P"
+  },
+  "authors":
+  [
+    {
+      "name": "Pedro Paulo",
+      "email": "pedrocm2409@gimail.com",
+      "url": "https://github.com/Pedraum1"
+    }
+  ],
+  "license": "MIT",
+  "frameworks": "arduino",
+  "platforms": "*"
+}
