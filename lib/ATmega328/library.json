@@ -12,11 +12,17 @@
   [
     {
       "name": "Pedro Paulo",
-      "email": "pedrocm2409@gimail.com",
+      "email": "pedro.paulo60@aluno.ifce.edu.br",
       "url": "https://github.com/Pedraum1"
     }
   ],
+  "export": {
+    "exclude": [
+      "test/*",
+      "src/main.c"
+    ]
+  },
   "license": "MIT",
   "frameworks": "arduino",
-  "platforms": "*"
+  "platforms": "atmelavr"
 }
