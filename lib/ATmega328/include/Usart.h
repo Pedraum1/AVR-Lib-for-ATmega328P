@@ -1,4 +1,5 @@
 #ifndef USART_T
+
 #define USART_T
 
 #ifndef F_CPU
@@ -21,5 +22,6 @@ uint16_t usart_count();
 char usart_read();
 void usart_read_string(char *buff);
 uint8_t usart_available();
+void reset_global_buffer(char *buff);
 
 #endif

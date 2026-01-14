@@ -144,3 +144,8 @@ uint8_t usart_available()
 {
 	return usart_count() > 0;
 }
+
+void reset_global_buffer(char *buff)
+{
+	buff[0] = '\0';
+}
