@@ -8,6 +8,10 @@
 // ================ Booleano ================
 #include "Boolean.h"
 
+//================ Strings ================
+
+#include "Strings.h"
+
 // ================ Manipulação de Bits ================
 #include "Bits.h"
 
